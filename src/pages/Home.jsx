@@ -11,7 +11,7 @@ export default function Home() {
           <NavLink className='btn border' to='/products'>Products</NavLink>
         </div>
         <h1 className="text-center pt-5 pb-2">Welcome to Boomazon</h1>
-          <Carousel />
+        <Carousel />
       </div>
     </>
   )

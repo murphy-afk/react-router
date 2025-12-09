@@ -22,7 +22,7 @@ export default function Products() {
   return (
     <>
       <Header />
-      <div className="container pt-3 w-80">
+      <div className="container pt-3 w-100 p-0">
         <div className="row justify-content-center row-gap-2">
           {products.map(product => (
             <Card product={product}

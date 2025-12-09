@@ -3,10 +3,14 @@ img {
   aspect-ratio: 1;
 }
 
-.card p{
+.card p {
   font-size: 0.7rem;
 }
 
 html body {
   background-color: rgb(175, 179, 182);
+}
+
+.row .col-3 {
+  width: 30%;
 }
