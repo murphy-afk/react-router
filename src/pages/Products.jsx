@@ -15,8 +15,6 @@ export default function Products() {
       .then((resp) => {
         const prodData = resp.data;
         setProducts(prodData);
-        console.log(prodData);
-
       })
   }
   return (

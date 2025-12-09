@@ -13,7 +13,6 @@ export default function Carousel() {
       .then((resp) => {
         const prodData = resp.data;
         setProducts(prodData);
-        console.log('carouseldata:', prodData)
       })
   }
   return (

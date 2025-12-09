@@ -8,7 +8,10 @@ img {
 }
 
 html body {
-  background-color: rgb(175, 179, 182);
+  background-image: url('./assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: difference;
 }
 
 .row .col-3 {
