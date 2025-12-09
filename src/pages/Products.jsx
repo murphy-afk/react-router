@@ -1,6 +1,7 @@
 import axios from "axios";
 import Header from "../components/Header";
 import { useEffect, useState } from "react";
+import Card from "../components/Card";
 
 export default function Products() {
   const [products, setProducts] = useState([])
@@ -21,19 +22,12 @@ export default function Products() {
   return (
     <>
       <Header />
-      <h1>Products</h1>
-      <div className="container">
-        <div className="row row-cols-3">
+      <div className="container pt-3 w-80">
+        <div className="row justify-content-center row-gap-2">
           {products.map(product => (
-            <div className="card" key={product.id}>
-              <div className="card-img-top">
-                <img src={product.image} alt="" />
-                <div className="card-body">
-                  <div className="card-title">{product.title}</div>
-                  <div className="card-text">{product.description}</div>
-                </div>
-              </div>
-            </div>
+            <Card product={product}
+              key={product.id}
+            />
           ))}
         </div>
       </div>
