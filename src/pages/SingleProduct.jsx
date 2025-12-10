@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 import Header from "../components/Header";
 import { reviews } from '../assets/reviews'
+import Review from "../components/Review";
 
 export default function SingleProduct() {
   const { id } = useParams();
@@ -49,11 +50,7 @@ export default function SingleProduct() {
               <div className="col-12">
                 <h2 className="border-bottom py-3">Reviews</h2>
                 {reviews.map((review) => (
-                  <div className="border-bottom" key={review.id}>
-                    <h3>{review.name}</h3><span><p className="fw-light">{review.date}</p></span>
-                    <p>{review.content}</p>
-                    <p>{review.rating}</p>
-                  </div>
+                  <Review review={review}/>
                 ))
                 }
               </div>
