@@ -14,9 +14,6 @@ html body {
   background-blend-mode: difference;
 }
 
-.row .col-3 {
-  width: 30%;
-}
 
 html .home-container {
   max-width: 100%;
