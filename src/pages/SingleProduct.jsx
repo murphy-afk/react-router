@@ -1,9 +1,9 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from 'axios'
-import Header from "../components/Header";
 import { reviews } from '../assets/reviews'
 import Review from "../components/Review";
+import ProductDetails from "../components/ProductDetails";
 
 export default function SingleProduct() {
   const { id } = useParams();
@@ -13,7 +13,12 @@ export default function SingleProduct() {
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then((resp) => {
-        setProduct(resp.data)
+        if (resp.data === '') {
+          navigate('/products')
+        }
+        else {
+          setProduct(resp.data)
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -28,29 +33,13 @@ export default function SingleProduct() {
         <div>
           {/* <button onClick={() => navigate('/products')}>test</button> */}
           <h1 className="text-center pt-0 pb-2 bg-secondary w-100">Product details</h1>
-          <div className="container p-2 rounded card-details text-light">
-            <div className="row">
-              <div className="col-6">
-                <img src={product.image} alt={product.title} />
-              </div>
-              <div className="col-6">
-                <h2>{product.title}</h2>
-                <p className="badge">{product.category}</p>
-                <p>{product.description}</p>
-                <p className="bg-dark rounded text-center">{product.price}&euro;</p>
-                {product.rating && (
-                  <div>
-                    <p>Average rating: {product.rating.rate}&#9734;</p>
-                    <p>Based on {product.rating.count} reviews</p>
-                  </div>
-                )}
-              </div>
-            </div>
+          <div className="container p-2 rounded card-details bg-semitransparent text-light">
+            <ProductDetails product={product} />
             <div className="row">
               <div className="col-12">
                 <h2 className="border-bottom py-3">Reviews</h2>
                 {reviews.map((review) => (
-                  <Review review={review}/>
+                  <Review key={review.id} review={review} />
                 ))
                 }
               </div>

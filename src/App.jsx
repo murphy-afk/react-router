@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs'
 import Products from './pages/Products'
 import SingleProduct from './pages/SingleProduct'
 import DefaultLayout from './layouts/DefaultLayout'
+import PageNotFound from './pages/PageNotFound'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
             <Route path='/products' element={<Products />} />
             <Route path='/products/:id' element={<SingleProduct />} />
           </Route>
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </>

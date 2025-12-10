@@ -8,8 +8,6 @@ export default function DefaultLayout() {
         <Header />
       </header>
       <Outlet />
-      
-<footer>SONO FOOTER</footer>
     </>
   );
 }

@@ -19,6 +19,6 @@ html .home-container {
   max-width: 100%;
 }
 
-.card-details {
+.bg-semitransparent {
   background-color: rgba(25, 24, 24, 0.466);
 }
