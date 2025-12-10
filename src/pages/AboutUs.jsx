@@ -3,7 +3,7 @@ import Header from "../components/Header";
 export default function AboutUs() {
   return (
     <>
-      <Header />
+
       <div className="container text-light">
         <h2 className="pt-4 border-bottom">Our Values</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quisquam sed eius, similique itaque harum repudiandae magni aspernatur corrupti possimus modi iste nemo expedita, mollitia nihil est soluta aliquid! Nulla.

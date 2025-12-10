@@ -16,7 +16,7 @@ export default function SingleProduct() {
       })
       .catch((err) => {
         console.log(err);
-        alert("Products doesn't exist");
+        alert("Product doesn't exist");
         navigate("/products");
       })
   }, [id])
@@ -26,11 +26,12 @@ export default function SingleProduct() {
       {product !== null &&
         <div>
           <Header />
+          {/* <button onClick={() => navigate('/products')}>test</button> */}
           <h1 className="text-center pt-0 pb-2 bg-secondary w-100">Product details</h1>
           <div className="container p-2 rounded card-details text-light">
             <div className="row">
               <div className="col-6">
-                <img src={product.image} alt="" />
+                <img src={product.image} alt={product.title} />
               </div>
               <div className="col-6">
                 <h2>{product.title}</h2>
@@ -45,16 +46,18 @@ export default function SingleProduct() {
                 )}
               </div>
             </div>
-            <div className="col-12">
-              <h2 className="border-bottom py-3">Reviews</h2>
-              {reviews.map((review) => (
-              <div className="border-bottom" key={review.id}>
-                <h3>{review.name}</h3><span><p className="fw-light">{review.date}</p></span>
-                <p>{review.content}</p>
-                <p>{review.rating}</p>
+            <div className="row">
+              <div className="col-12">
+                <h2 className="border-bottom py-3">Reviews</h2>
+                {reviews.map((review) => (
+                  <div className="border-bottom" key={review.id}>
+                    <h3>{review.name}</h3><span><p className="fw-light">{review.date}</p></span>
+                    <p>{review.content}</p>
+                    <p>{review.rating}</p>
+                  </div>
+                ))
+                }
               </div>
-              ))
-              }
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function Products() {
   }
   return (
     <>
-      <Header />
+   
       <div className="container pt-3 w-100 p-0">
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
           {products.map(product => (
