@@ -9,8 +9,10 @@ export default function SingleProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     axios.get(`https://fakestoreapi.com/products/${id}`)
       .then((resp) => {
         if (resp.data === '') {
@@ -18,6 +20,7 @@ export default function SingleProduct() {
         }
         else {
           setProduct(resp.data)
+          setLoading(false)
         }
       })
       .catch((err) => {
@@ -29,6 +32,7 @@ export default function SingleProduct() {
 
   return (
     <>
+      {loading && <div><p className="text-center fw-bold py-5">Loading...</p></div>}
       {product !== null &&
         <div>
           {/* <button onClick={() => navigate('/products')}>test</button> */}
