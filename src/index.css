@@ -3,9 +3,9 @@ img {
   aspect-ratio: 1;
 }
 
-.card p {
+/* .card p {
   font-size: 0.7rem;
-}
+} */
 
 html body {
   background-image: url('./assets/background.jpg');
@@ -17,4 +17,8 @@ html body {
 
 html .home-container {
   max-width: 100%;
+}
+
+.card-details {
+  background-color: rgba(25, 24, 24, 0.466);
 }
