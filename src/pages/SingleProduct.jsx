@@ -25,7 +25,6 @@ export default function SingleProduct() {
     <>
       {product !== null &&
         <div>
-          <Header />
           {/* <button onClick={() => navigate('/products')}>test</button> */}
           <h1 className="text-center pt-0 pb-2 bg-secondary w-100">Product details</h1>
           <div className="container p-2 rounded card-details text-light">
