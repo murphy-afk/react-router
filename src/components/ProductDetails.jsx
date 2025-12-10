@@ -14,6 +14,8 @@ export default function ProductDetails({ product }) {
           <p>Based on {product.rating.count} reviews</p>
         </div>
       )}
+      <button className="btn btn-outline-light me-2">BUY NOW</button>
+      <button className="btn btn-outline-light">ADD TO CART</button>
     </div>
   </div>)
 }
